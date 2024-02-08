@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrapper{
+    height: 400px;
+    width: 400px;
+    position: relative;
+}
+
+#sun{
+    height: 100px;
+    width: 100px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 30px white;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#earth{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    animation: orbit 36s linear infinite;
+}
+
+#earth::before{
+    content: "";
+    height: 30px;
+    width: 30px;
+    background-color: aqua;
+    border-radius: 50%;
+    position: absolute;
+    right: 29px;
+    top: 29px;
+}
+
+#moon{
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    right: 4px;   
+    top: 4px;
+    animation: orbit 2.7s linear infinite;
+}
+
+#earth,#moon{
+    border-width: 1px 1px 0 0;
+    border-color: white transparent transparent transparent;
+    border-style: solid;
+    border-radius: 50%;
+}
+
+#moon::before{
+    content: "";
+    height: 12px;
+    width: 12px;
+    background-color: silver;
+    border-radius: 50%;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+@keyframes orbit{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+h1{
+    font-family: 'Dancing Script', cursive;
+    position: absolute;
+    top: 15%;
+    text-shadow: 0 0 10px black,0 0 10px white;
+    font-size: 4.5rem;
+    color: white;
+}
